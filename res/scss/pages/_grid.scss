@@ -1,0 +1,113 @@
+.container {
+    position: relative;
+    display: grid;
+    left: 0;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 250px;
+    grid-auto-flow: dense;
+    grid-gap: 1px;
+    background: #333;
+    z-index: 1;
+    @include transition(left 0.3s ease-in-out);
+    
+    &.open {
+        left: calcRem(250px);
+    }
+}
+
+.item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    
+    .cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: "";
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        z-index: 1;
+        transform: scale(1);
+        transform-origin: center;
+        @include transition(transform 0.3s ease-in);
+    }
+    
+    a {
+        position: relative;
+        display: block;
+        padding: calcRem(5px) calcRem(15px);
+        color: #fff;
+        font-size: calcRem(18px);
+        font-weight: 100;
+        line-height: calcRem(30px);
+        text-decoration: none;
+        text-transform: uppercase;
+        z-index: 3;
+        visibility: hidden;
+        transform: scale(0.1);
+        transform-origin: center;
+        @include transition(transform 0.3s ease-in);
+        
+        &::after {
+            position: absolute;
+            bottom: 0;
+            left: 40%;
+            content: "";
+            width: 20%;
+            border-bottom: 1px solid #fff;
+        }
+    }
+    
+    &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: "";
+        background: #333333e6;
+        opacity: 0;
+        z-index: 2;
+        @include transition(opacity 0.3s ease-in);
+    }
+}
+
+.item:hover {
+    .cover {
+        transform: scale(1.75);
+        @include transition(transform 0.45s ease-in);   
+    }
+    
+    a {
+        visibility: visible;
+        transform: scale(1);
+        @include transition(transform 0.45s ease-in);
+    }
+    
+    &::after {
+        opacity: 1;
+        @include transition(opacity 0.45s ease-in);
+    }
+}
+
+@media only screen and (min-width: 31.25em) {
+    .item.horizontal {
+        grid-column: span 2;
+    }
+    
+    .item.vertical {
+        grid-row: span 2;
+    }
+    
+    .item.big {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+}

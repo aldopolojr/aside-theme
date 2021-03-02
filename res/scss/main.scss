@@ -1,0 +1,22 @@
+// sass res/scss/main.scss res/css/style.css --watch
+
+// abstract
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+
+// base
+@import "base/typography";
+@import "base/reset";
+
+// layout
+@import "layout/wrapper";
+@import "layout/nav";
+
+// components
+
+// pages
+@import "pages/grid";
+@import "pages/items";
+@import "pages/filter";
+@import "pages/social";

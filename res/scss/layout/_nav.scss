@@ -1,0 +1,50 @@
+.header {
+    position: fixed;
+    top: calcRem(20px);
+    left: calcRem(20px);
+    z-index: 20;
+    @include transition(left 0.3s ease-in-out);
+    
+    &.open {
+        left: calcRem(270px);
+    }
+    
+    .menu-toggle {
+        color: #fff;
+        font-size: calcRem(24px);
+        cursor: pointer;
+    }
+}
+
+.nav {
+    position: absolute;
+    top: calcRem(-20px);
+    left: calcRem(-270px);
+    padding: calcRem(20px) 0;
+    width: 250px;
+    height: 100vh;
+    background: #333;
+    overflow-x: scroll;
+    
+    &::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+    }
+    
+    a {
+        display: block;
+        padding: calcRem(13px) calcRem(28px);
+        color: #a3a3a3;
+        font-size: calcRem(12px);
+        font-weight: 300;
+        text-transform: uppercase;
+        
+        &.active, &:hover {
+            color: #fff;
+        }
+    }
+    
+    .sub-menu a {
+        padding-left: calcRem(40px);
+    }
+}
