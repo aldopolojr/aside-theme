@@ -1,11 +1,12 @@
 # Aside theme
-This is a **slicing**, check here for the [demo](https://aldopolojr.github.io/aside-theme/)
+
+## links
+[demo link](https://aldopolojr.github.io/aside-theme/)
+[source link](https://wp.seatheme.net/aside/)
+
+## Category
+practice
 
 ## Notes
-- …
+/
 
-## Source
-[https://wp.seatheme.net/aside/](https://wp.seatheme.net/aside/)
-
-## Tags
-#HTML #CSS #JavaScript #ResponsiveDesign #CSS-grid
